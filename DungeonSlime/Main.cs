@@ -48,7 +48,19 @@ public class Main : Core
         SpriteBatch.Begin();
 
         // Draw the logo texture
-        SpriteBatch.Draw(_logo, Vector2.Zero, Color.White);
+        SpriteBatch.Draw(
+            _logo,              // texture
+            new Vector2(        // position
+                Window.ClientBounds.Width * 0.5f,
+                Window.ClientBounds.Height * 0.5f),
+            null,               // sourceRectangle
+            Color.White,        // color
+            0.0f,               // rotation
+            new Vector2(_logo.Width, _logo.Height) * 0.5f,       // origin
+            1.0f,               // scale
+            SpriteEffects.None, // effects
+            0.0f                // layerDepth
+    );
 
         // Always end the sprite batch when finished.
         SpriteBatch.End();
